@@ -5,12 +5,12 @@ using System;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject Enemy;
+    public Enemy Enemy;
     private GameObject[] _portals;
     private Coroutine _coroutine;
 
 
-    void Start()
+   private void Start()
     {
         _portals = GameObject.FindGameObjectsWithTag("Respawn");
         _coroutine = StartCoroutine(Spawn());

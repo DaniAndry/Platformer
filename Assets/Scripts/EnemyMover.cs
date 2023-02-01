@@ -7,6 +7,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] private Transform _path;
 
     private float _speed;
+
     private Transform[] _points;
     private int _currentPoint;
 

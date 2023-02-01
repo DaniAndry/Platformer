@@ -5,17 +5,15 @@ using System;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Enemy Enemy;
+    public Enemy enemy;
     private GameObject[] _portals;
     private Coroutine _coroutine;
-
-
-   private void Start()
+    
+    private void Start()
     {
         _portals = GameObject.FindGameObjectsWithTag("Respawn");
         _coroutine = StartCoroutine(Spawn());
     }
-
 
     private IEnumerator Spawn()
     {
@@ -28,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         {
             _spawnPoint = _portals[random.Next(_portals.Length)];
             _tempSpawnPoint = _spawnPoint.transform.position;
-            Instantiate(Enemy, _tempSpawnPoint, Quaternion.identity);
+            Instantiate(enemy, _tempSpawnPoint, Quaternion.identity);
             yield return WaitForSeconds;
         }
     }

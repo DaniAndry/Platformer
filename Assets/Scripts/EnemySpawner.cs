@@ -1,32 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Enemy enemy;
-    private GameObject[] _portals;
+    [SerializeField] private Enemy _enemy;
+    [SerializeField] private List<Portal> _portals;
+
     private Coroutine _coroutine;
-    
+
     private void Start()
     {
-        _portals = GameObject.FindGameObjectsWithTag("Respawn");
         _coroutine = StartCoroutine(Spawn());
     }
 
     private IEnumerator Spawn()
     {
-        Vector3 _tempSpawnPoint;
-        GameObject _spawnPoint;
-        System.Random random = new System.Random();
+        Vector3 tempSpawnPoint;
+        Portal spawnPoint;
         var WaitForSeconds = new WaitForSeconds(2f);
 
         while (true)
         {
-            _spawnPoint = _portals[random.Next(_portals.Length)];
-            _tempSpawnPoint = _spawnPoint.transform.position;
-            Instantiate(enemy, _tempSpawnPoint, Quaternion.identity);
+            spawnPoint = _portals[UnityEngine.Random.Range(0, _portals.Count)];
+            tempSpawnPoint = spawnPoint.transform.position;
+            Enemy enemy = Instantiate(_enemy, tempSpawnPoint, Quaternion.identity);
             yield return WaitForSeconds;
         }
     }

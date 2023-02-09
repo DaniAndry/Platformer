@@ -16,11 +16,12 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        int enemyCount = 3;
         Vector3 tempSpawnPoint;
         Portal spawnPoint;
         var WaitForSeconds = new WaitForSeconds(2f);
 
-        while (true)
+        for (int i = 0; i < enemyCount; i++)
         {
             spawnPoint = _portals[UnityEngine.Random.Range(0, _portals.Count)];
             tempSpawnPoint = spawnPoint.transform.position;
@@ -29,3 +30,4 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 }
+

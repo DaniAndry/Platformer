@@ -5,8 +5,8 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField] private Transform _path;
+    [SerializeField] private float _speed;
 
-    private float _speed;
     private Transform[] _points;
     private int _currentPoint;
 

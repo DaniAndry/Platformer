@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private GameObject _tempEnemy;
+    [SerializeField] private GameObject _enemy;
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class CoinSpawner : MonoBehaviour
 {
     [SerializeField] private Coin _coin;
+
     private Vector2 _position;
 
     private void Start()

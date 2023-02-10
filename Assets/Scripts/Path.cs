@@ -5,5 +5,4 @@ using UnityEngine;
 public class Path : MonoBehaviour
 {
     [SerializeField] private GameObject _path;
-
 }

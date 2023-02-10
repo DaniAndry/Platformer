@@ -7,7 +7,10 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] private Rigidbody2D _rigidbody;
 
-    void Start()
+    private int RunHash = Animator.StringToHash("Run");
+    private int IdleHash = Animator.StringToHash("Idle");
+
+    private void Start()
     {
         _animator = GetComponent<Animator>();
     }
@@ -16,11 +19,11 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
-            _animator.SetTrigger("Run");
+            _animator.SetTrigger(RunHash);
         }
         else
         {
-            _animator.SetTrigger("Idle");
+            _animator.SetTrigger(IdleHash);
         }
     }
 }

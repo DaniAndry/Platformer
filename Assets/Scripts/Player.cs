@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    private GameObject _player;
 }

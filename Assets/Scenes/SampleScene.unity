@@ -1679,8 +1679,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c42e12579dc1cd48850e49860544aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 488491237}
-  _healthBar: {fileID: 1759585905}
+  _healthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1759585905}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: OnValueChanched
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &488491237 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3016839211163810320, guid: 82abff919e65b414dbba2ec515b8671c, type: 3}
@@ -5597,7 +5610,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1759585902}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1759585905
 MonoBehaviour:
   m_ObjectHideFlags: 0

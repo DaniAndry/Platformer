@@ -7,11 +7,11 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Player _player;
     [SerializeField] private Slider _slider;
 
-    public void OnValueChanched(int value, int maxValue)
+    public void OnValueChanched()
     {
         float delta = 0.5f;
 
-        float targetValue = (float)value / maxValue;
+        float targetValue = (float)_player.CurrentHealth / _player.MaxHealth;
 
         _slider.DOValue(targetValue, delta);
     }
